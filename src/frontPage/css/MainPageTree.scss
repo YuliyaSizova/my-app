@@ -1,0 +1,113 @@
+.tree {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+
+ul {
+    margin: 0 0 0 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+.text {
+}
+}
+
+.node {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    color: #7a8083;
+    padding: 10px;
+    position: relative;
+
+&:hover,
+&.active {
+     color: white;
+     background-color: #1c2b36;
+ }
+.tree-item {
+    width: calc(100% - 50px);
+    overflow: hidden;
+}
+
+.edit {
+    height: 20px;
+    width: 120px;
+    font-size: 14px;
+    float: right;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    background-color: #008000;
+    color: white;
+    margin-top: 2px;
+
+&:hover {
+     background-color: #00b000;
+ }
+
+&:active {
+     background-color: #006000;
+ }
+}
+
+.text {
+    display: inline;
+}
+}
+
+@for $i from 1 through 20 {
+    .lvl-#{$i} {
+        padding-left: #{12 * $i}px;
+    }
+}
+
+.expand,
+.collapse,
+.hide,
+.rotten,
+.no_rotten {
+    display: inline-block;
+    padding: 0 10px 0 2px;
+    color: white;
+    font: normal normal normal 14px/1 FontAwesome;
+    vertical-align: top;
+    margin-top: 5px;
+}
+
+.hide:before {
+    color: transparent;
+    content: '\F0DA';
+}
+
+.expand:before {
+    content: '\F0DA';
+}
+
+.collapse:before {
+    content: '\F0D7';
+}
+
+.rotten:before {
+    content: '!';
+    color: #ff2711;
+}
+.no_rotten:before {
+    content: ' ';
+}
+
+.added {
+    background-color: rgba(32, 70, 29, 0.32);
+}
+
+.deleted {
+    background-color: rgba(117, 22, 22, 0.39);
+}
+}

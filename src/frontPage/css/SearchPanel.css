@@ -1,0 +1,13 @@
+
+#search-panel {
+    position: absolute;
+    top: 24px;
+    left: 2%;
+    width: 61%;
+    z-index: 3;
+    background-color: rgba(28, 42, 52, 0.95);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
