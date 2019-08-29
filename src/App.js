@@ -1,20 +1,18 @@
-import React from 'react';
+import React, { Fragment }from 'react';
+import { MuiThemeProvider } from '@material-ui/core'
+import Header from './frontPage/Header'
 
 import './App.css';
 import MainPage from './frontPage/MainPage'
 function App() {
   return (
-
-    <div className="App">
-
-      <header className="App-header">
+    <Fragment>
       {/*  <img src={logo} className="App-logo" alt="logo" />*/}
-        <p>
-            <MainPage name="4"/>
-        </p>
-
-      </header>
-    </div>
+      <MuiThemeProvider>
+        <Header/>
+        <MainPage/>
+        </MuiThemeProvider>
+    </Fragment>
   );
 }
 
