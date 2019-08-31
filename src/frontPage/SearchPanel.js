@@ -13,7 +13,9 @@ class SearchPanel extends React.Component {
     };
 
   }
-
+  handleReset=()=> {
+    this.setState({value: ''});
+  };
   handleChange=(event)=> {
     this.setState({value: event.target.value});
   };
@@ -54,6 +56,7 @@ class SearchPanel extends React.Component {
             </Button>
             <Button
               variant="contained"
+              onClick={this.handleReset}
               label="Очистить"
             >
               Очистить

@@ -19,7 +19,9 @@ class MainPage extends React.Component {
       <Fragment>
         <div>
           <SearchPanel parentCallback = {this.callbackFunction}/>
-          <MainPageTree characters = {this.state.characters} />
+          <MainPageTree characters = {this.state.characters}
+          hasCharacters = {this.state.characters.length > 0}
+          />
         </div>
       </Fragment>
     );

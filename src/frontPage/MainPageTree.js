@@ -21,21 +21,18 @@ class MainPageTree extends React.Component {
         })
 
   }
-  componentDidUpdate(){
-   // const {props} = this;
-  //  const {characters} = props;
-    console.log(this);
-
-  }
 
   render() {
-      const {state} = this;
+      const {state, props} = this;
       const {items} = state;
+      const {characters, hasCharacters} = props;
     return (
       <div id="object-tree" className="tree">
         <h4>Список персонажей</h4>
         <ul>
-          {items && items.map(function(person) {
+          {hasCharacters? characters.map(function(person) {
+            return <li>{person.name}</li>;
+          }) : items && items.map(function(person) {
             return <li>{person.name}</li>;
         })}
         </ul>
