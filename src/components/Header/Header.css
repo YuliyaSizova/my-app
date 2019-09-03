@@ -1,7 +1,14 @@
-.header {
+.header{
     padding: 40px;
     text-align: center;
     background: #1abc9c;
     color: white;
     font-size: 30px;
+}
+.table{
+    width: 100%;
+}
+.Link {
+    font-size: 20px;
+    color: white;
 }

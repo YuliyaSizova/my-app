@@ -1,16 +1,23 @@
-import React, { Fragment }from 'react';
-import Header from './frontPage/Header'
-
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
-import MainPage from './frontPage/MainPage'
+import MainPage from './components/MainPage/MainPage';
+import About from './components/About/About';
+import  LoginPage  from './components/Login/LoginPage';
+import { PrivateRoute } from './components/Login/PrivateRoute';
+
+
 function App() {
   return (
-    <Fragment>
+    <Router>
       {/*  <img src={logo} className="App-logo" alt="logo" />*/}
-        <Header/>
-        <MainPage/>
-    </Fragment>
+      <Route exact path="/" component={MainPage}/>
+      <Route path="/login" component={LoginPage}/>
+      <PrivateRoute  path="/about" component={About} />
+    </Router>
   );
 }
+
+
 
 export default App;

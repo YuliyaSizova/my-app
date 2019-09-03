@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
+import Header from '../Header/Header'
 
-import SearchPanel from './SearchPanel'
+import SearchPanel from '../SearchPanel/SearchPanel'
 
-import MainPageTree from './MainPageTree'
+import MainPageTree from '../MainPageTree/MainPageTree'
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
@@ -17,12 +18,10 @@ class MainPage extends React.Component {
   render() {
     return (
       <Fragment>
-        <div>
+        <Header/>
           <SearchPanel parentCallback = {this.callbackFunction}/>
           <MainPageTree characters = {this.state.characters}
-          hasCharacters = {this.state.characters.length > 0}
           />
-        </div>
       </Fragment>
     );
   }

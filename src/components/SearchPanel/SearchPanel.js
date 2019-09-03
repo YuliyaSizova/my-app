@@ -1,4 +1,4 @@
-import './css/SearchPanel.css';
+import './SearchPanel.css';
 import { TextField, Button } from '@material-ui/core'
 
 import React from 'react';
@@ -40,10 +40,6 @@ class SearchPanel extends React.Component {
             value={this.state.value}
             onChange={this.handleChange}
             label={"Имя"}
-          />
-          <TextField
-            style={{ margin: 20}}
-            label={"Фамилия"}
           />
           <div >
             <Button
