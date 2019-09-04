@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { addNumber } from '../../reducers/actions/actions'
+import { Button } from '@material-ui/core'
 
 const CountClick = (props) => {
   return(<div>
-    test
+    Нажмите плюс:
     {props.counts}
-      <button onClick={props.addNumber}>+1</button>
+      <Button onClick={props.addNumber}>+1</Button>
     </div>)
 };
 const mapStateToProps = (state) => {

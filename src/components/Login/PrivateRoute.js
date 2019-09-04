@@ -39,7 +39,7 @@ export const AuthButton = withRouter(
         </Button>
       </p>
     ) : (
-      <p>You are not logged in.</p>
+      <p>Вы не залогинины.</p>
     )
 );
 
