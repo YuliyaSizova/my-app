@@ -1,14 +1,10 @@
 
 #search-panel {
     position: relative;
-    top: 24px;
-    left: 2%;
-    width: 61%;
+    margin-top: auto;
+    width: 100%;
     z-index: 3;
-    background-color: #1abc9c;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-end;
+    background: rgba(188, 187, 149, 0.6);
+    text-align: center;
+    padding-top: 20px;
 }
-

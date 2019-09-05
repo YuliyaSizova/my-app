@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, TextField } from '@material-ui/core';
 import { fakeAuth } from './PrivateRoute';
+import './Login.css'
 import {
   Redirect
 } from 'react-router-dom';
@@ -38,24 +39,31 @@ class LoginPage extends React.Component {
     if (redirectToReferrer) return <Redirect to={from} />;
 
     return (
+      <div id="login">
        <form onSubmit={this.login}>
          <TextField
            InputLabelProps ={{shrink: true}}
-           style={{ margin: 20}}
-         value={this.state.login}
-         onChange={this.handleChange}
-         label={"Логин"}
-         required={true}
+           style={{
+             margin: 20,
+             width: '80%'
+           }}
+           value={this.state.login}
+           onChange={this.handleChange}
+           label={"Логин"}
+           required={true}
        />
          <TextField
            InputLabelProps ={{shrink: true}}
-           style={{ margin: 20}}
+           style={{
+             margin: 20,
+             width: '80%'
+           }}
            value={this.state.password}
            onChange={this.handleChange}
            label={"Пароль"}
            required={true}
          />
-         <div >
+         <div id="login-button">
            <Button
              style={{ margin: 20}}
              type="submit"
@@ -66,6 +74,7 @@ class LoginPage extends React.Component {
            </Button>
          </div>
        </form>
+      </div>
     );
   }
 }

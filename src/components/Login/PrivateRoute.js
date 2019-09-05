@@ -1,5 +1,6 @@
 import React from "react";
-import { Button } from '@material-ui/core';
+//import {  } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import {
   Route,
   Redirect,
@@ -30,13 +31,13 @@ export const AuthButton = withRouter(
   ({ history }) =>
     fakeAuth.isAuthenticated ? (
       <p>
-        <Button
+        <Link
           onClick={() => {
             fakeAuth.signout(() => history.push("/"));
           }}
         >
           Выйти
-        </Button>
+        </Link>
       </p>
     ) : (
       <p>Вы не залогинины.</p>

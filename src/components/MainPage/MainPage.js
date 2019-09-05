@@ -1,5 +1,7 @@
-import React, { Fragment } from 'react';
-import Header from '../Header/Header'
+import React from 'react';
+import Header from '../Header'
+import Footer from '../Footer'
+import './MainPage.css'
 
 import SearchPanel from '../SearchPanel/SearchPanel'
 
@@ -8,11 +10,18 @@ class MainPage extends React.Component {
 
   render() {
     return (
-      <Fragment>
+      <div>
+        <div>
         <Header/>
+        <section>
           <SearchPanel/>
+        </section>
+        <section>
           <MainPageTree/>
-      </Fragment>
+        </section>
+        <Footer/>
+        </div>
+      </div>
     );
   }
 }

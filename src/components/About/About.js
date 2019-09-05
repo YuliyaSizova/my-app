@@ -1,17 +1,22 @@
-import React from 'react';
-import Header from '../Header/Header'
+import './About.css'
+import React, { Fragment } from 'react';
+import Header from '../Header/index'
 import CountClick from '../Counter'
+import Footer from '../Footer'
+
 
 
 class About extends React.Component {
   render() {
     return (
-      <div>
+      <Fragment>
         <Header/>
-        Оставить отзыв
-        <br/>
-        <CountClick/>
-      </div>
+        <div id="about">
+          Оставить отзыв
+          <CountClick/>
+        </div>
+        <Footer/>
+      </Fragment>
     );
   }
 }

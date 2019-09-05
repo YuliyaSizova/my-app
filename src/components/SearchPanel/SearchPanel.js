@@ -33,6 +33,7 @@ class SearchPanel extends React.Component {
   render() {
     return (
       <div id="search-panel" >
+        <div id="search-content">
         <form  onSubmit={this.handleSubmit}>
           <TextField
             style={{ margin: 20}}
@@ -86,6 +87,7 @@ class SearchPanel extends React.Component {
             </Button>
           </div>
         </form>
+        </div>
       </div>
     );
   }

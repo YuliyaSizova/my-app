@@ -11,12 +11,14 @@ class MainPageTree extends React.Component {
     const { items } = this.props;
     return (
       <div id="object-tree" className="tree">
+        <div id="content">
         <h4>Список</h4>
-        <ul>
+          <ul>
           { items && items.length > 0 ? items.map(function(item) {
             return <li>{item.name}</li>;
-        }) : 'Не найдено'}
-        </ul>
+          }) : 'Не найдено'}
+          </ul>
+        </div>
       </div>
     );
   }

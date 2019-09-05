@@ -1,14 +1,66 @@
-.header{
-    padding: 40px;
+#header-wrapper
+{
+    background: #2b2b2b;
+}
+
+#header
+{
+    position: relative;
+    height: 100px;
+}
+
+#logo h1 {
+    display: inline-block;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #edc111;
+    margin: 30px;
+    padding-right: 0.50em;
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+#menu
+{
+    position: absolute;
+    right: 0;
+    top: 1.6em;
+}
+
+#menu ul
+{
+    display: inline-block;
+}
+
+
+#menu li
+{
+    display: block;
+    float: left;
     text-align: center;
-    background: #1abc9c;
-    color: white;
-    font-size: 30px;
 }
-.table{
-    width: 100%;
+
+#menu li a, #menu li span, #menu AuthButton
+{
+    display: inline-block;
+    margin-left: 1px;
+    padding: 1em 1.5em 0em 1.5em;
+    letter-spacing: 0.10em;
+    text-decoration: none;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #FFF;
 }
-.Link {
-    font-size: 20px;
-    color: white;
+
+#menu li:hover a, #menu li.active a, #menu li.active span, #exit:hover
+{
+    color: #c6912b;
 }
+
+#exit
+{
+    display: block;
+    position: absolute;
+    right: 44px;
+    top: 0;
+}
+

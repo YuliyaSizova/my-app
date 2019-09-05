@@ -1,4 +1,6 @@
 body {
+  background: url(./Z_rlJOxUxqE.jpg) no-repeat;
+  -moz-background-size: 100%; /* Firefox 3.6+ */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",

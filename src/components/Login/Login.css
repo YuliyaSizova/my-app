@@ -1,0 +1,18 @@
+#login
+{
+    position: relative;
+    margin:50px 500px 300px 500px;
+    background: rgba(188, 187, 149, 0.6);
+    padding-top: 20px;
+    display: block;
+}
+
+#login form
+{
+    text-align: center;
+}
+#login-button
+{
+    text-align: right;
+    padding-right: 30px;
+}

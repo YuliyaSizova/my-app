@@ -1,9 +1,32 @@
 .tree{
-    float:right;
-    padding: 60px;
-    text-align: left;
-    background: #1abc9c;
-    color: white;
-    font-size: 22px;
+    position: relative;
+    margin-top: 2%;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: rgba(188, 187, 149, 0.6);
+    display: block;
 }
 
+
+#content
+{
+    text-align: center;
+}
+
+#content h4
+{
+    padding-left: 40px;
+}
+
+
+#object-tree li
+{
+   display: block;
+    padding: 3px;
+}
+
+#object-tree li:hover
+{
+    color: #c6912b;
+}
