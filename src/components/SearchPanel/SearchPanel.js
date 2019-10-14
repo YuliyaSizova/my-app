@@ -16,7 +16,7 @@ class SearchPanel extends React.Component {
 
   }
   handleReset=()=> {
-    this.setState({name: ''});
+    this.setState({name: '', searchType: 'people' });
   };
   handleRadioChange=(event)=> {
     this.setState({searchType: event.target.value});

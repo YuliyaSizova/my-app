@@ -16,6 +16,7 @@ class Header extends React.Component {
             <ul>
             <li> <Link to="/">Главная страница</Link></li>
             <li> <Link to="/about">О ресурсе</Link></li>
+            <li> <Link to="/vk">Вконтакте</Link></li>
             </ul>
           </div>
           <div id="exit"> <AuthButton/> </div>
