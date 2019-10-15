@@ -11,19 +11,22 @@
     width: 375px;
     margin: 0 0px;
 }
-.bell-area {
+
+.bell:hover {
     background-color: #3d6898;
+
 }
 .bell {
     position: relative;
+    display: inline-block;
     margin: auto;
     /*  color: #1e3c5f;*/
     color: white;
     padding: 5px 20px;
+    text-align: center;
+    transition: opacity 100ms linear;
 }
-.bell:hover {
-    color: white;
-}
+
 .bell-active {
     color: white;
 }
