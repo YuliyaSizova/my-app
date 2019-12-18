@@ -12,8 +12,6 @@ import { Button } from '@material-ui/core';
 
 const Vk = (props) => {
   const { addNotification, notifications, removeAllNotifications } = props;
-  console.log(props);
-
   return (
     <Fragment>
       <Header />
@@ -22,7 +20,7 @@ const Vk = (props) => {
         <div className="vk-bar">
           <div className="bell-area">
             <div className="bell" onClick={removeAllNotifications}>
-              {notifications != 0 ?
+              {notifications && (notifications != 0) ?
                 <Fragment><FontAwesomeIcon className="bell-active" icon={faBell} size="2x" /> <div className="notification-vk"> {notifications}</div> </Fragment> :
                 <FontAwesomeIcon className="bell-inactive" icon={faBell} size="2x" />}
             </div>
@@ -39,7 +37,6 @@ const Vk = (props) => {
 
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     notifications: state.notifications
   }

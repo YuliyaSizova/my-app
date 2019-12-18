@@ -8,7 +8,7 @@ const initialState = {
 function rootReducer(state = initialState, action) {
 
   if (action.type === ADD) {
-    return { counts: state.counts + 1 };
+    return { ...state, counts: state.counts + 1 };
   } else if (action.type === LOAD_PEOPLE) {
     return { ...state, items: action.payload }
   } else if (action.type === SEARCH_PEOPLE) {
@@ -18,8 +18,9 @@ function rootReducer(state = initialState, action) {
   } else if (action.type === ADD_NOTIFICATION) {
     return { notifications: state.notifications + 1 }
   } else if (action.type === REMOVE_ALL_NOTIFICATIONS) {
-    return { notifications: 0 }
+    return { ...state, notifications: 0 }
   }
+  console.log(state);
   return state;
 }
 export default rootReducer;
