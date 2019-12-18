@@ -12,11 +12,11 @@ class LoginPage extends React.Component {
     super(props);
     this.state = {
       login: '',
-      password:'',
+      password: '',
       redirectToReferrer: false
     };
   }
-  handleChange=(event)=> {
+  handleChange = (event) => {
     this.setState({
       login: event.target.login,
       password: event.target.password
@@ -40,40 +40,40 @@ class LoginPage extends React.Component {
 
     return (
       <div id="login">
-       <form onSubmit={this.login}>
-         <TextField
-           InputLabelProps ={{shrink: true}}
-           style={{
-             margin: 20,
-             width: '80%'
-           }}
-           value={this.state.login}
-           onChange={this.handleChange}
-           label={"Логин"}
-           required={true}
-       />
-         <TextField
-           InputLabelProps ={{shrink: true}}
-           style={{
-             margin: 20,
-             width: '80%'
-           }}
-           value={this.state.password}
-           onChange={this.handleChange}
-           label={"Пароль"}
-           required={true}
-         />
-         <div id="login-button">
-           <Button
-             style={{ margin: 20}}
-             type="submit"
-             label="Войти"
-             variant="contained"
-           >
-             Войти
+        <form onSubmit={this.login}>
+          <TextField
+            InputLabelProps={{ shrink: true }}
+            style={{
+              margin: 20,
+              width: '80%'
+            }}
+            value={this.state.login}
+            onChange={this.handleChange}
+            label={"Логин"}
+            required={true}
+          />
+          <TextField
+            InputLabelProps={{ shrink: true }}
+            style={{
+              margin: 20,
+              width: '80%'
+            }}
+            value={this.state.password}
+            onChange={this.handleChange}
+            label={"Пароль"}
+            required={true}
+          />
+          <div id="login-button">
+            <Button
+              style={{ margin: 20 }}
+              type="submit"
+              label="Войти"
+              variant="contained"
+            >
+              Войти
            </Button>
-         </div>
-       </form>
+          </div>
+        </form>
       </div>
     );
   }
