@@ -1,19 +1,24 @@
-import { ADD, LOAD_PEOPLE, SEARCH_PEOPLE, LOGIN } from '../constants/actionTypes';
+import { ADD, LOAD_PEOPLE, SEARCH_PEOPLE, LOGIN, ADD_NOTIFICATION, REMOVE_ALL_NOTIFICATIONS } from '../constants/actionTypes';
 const initialState = {
   counts: 0,
   items: [],
-  login: false
+  login: false,
+  notifications: 0
 };
 function rootReducer(state = initialState, action) {
 
   if (action.type === ADD) {
-    return { counts: state.counts+1 };
-  } else if (action.type === LOAD_PEOPLE){
-    return {...state, items: action.payload}
-  } else if (action.type === SEARCH_PEOPLE){
-    return {...state, items: action.payload}
-  } else if (action.type === LOGIN){
-    return {login: true}
+    return { counts: state.counts + 1 };
+  } else if (action.type === LOAD_PEOPLE) {
+    return { ...state, items: action.payload }
+  } else if (action.type === SEARCH_PEOPLE) {
+    return { ...state, items: action.payload }
+  } else if (action.type === LOGIN) {
+    return { login: true }
+  } else if (action.type === ADD_NOTIFICATION) {
+    return { notifications: state.notifications + 1 }
+  } else if (action.type === REMOVE_ALL_NOTIFICATIONS) {
+    return { notifications: 0 }
   }
   return state;
 }
