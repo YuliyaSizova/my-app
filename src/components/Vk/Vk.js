@@ -20,7 +20,7 @@ const Vk = (props) => {
         <div className="vk-bar">
           <div className="bell-area">
             <div className="bell" onClick={removeAllNotifications}>
-              {notifications && (notifications != 0) ?
+              {notifications && (notifications !== 0) ?
                 <Fragment><FontAwesomeIcon className="bell-active" icon={faBell} size="2x" /> <div className="notification-vk"> {notifications}</div> </Fragment> :
                 <FontAwesomeIcon className="bell-inactive" icon={faBell} size="2x" />}
             </div>
