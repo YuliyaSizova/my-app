@@ -7,14 +7,15 @@ class Canvas extends React.Component {
      
       const canvas = this.refs.canvas
       const ctx = canvas.getContext("2d")
-      ctx.strokeStyle = "darkgreen";
+      
       ctx.fillStyle = "green";
-      ctx.shadowBlur = 15;
+      ctx.strokeStyle = "darkgreen";
+      ctx.shadowBlur = 10;
       ctx.shadowColor = "rgba(0,0,0,0.8)";
 
       ctx.lineWidth = 10;
       draw(ctx, 350,600,120,0);
-      
+      draw(ctx, 200,600,50,0);
     }
     render() {
       return(
@@ -35,22 +36,24 @@ class Canvas extends React.Component {
     ctx.translate(startX, startY);
     ctx.rotate(angle * Math.PI/180);
     ctx.moveTo(0, 0);
-    ctx.lineTo(0, -len);
+    if(angle > 0) {
+      ctx.bezierCurveTo(10, -len/2, 10, -len/2, 0, -len);
+  } else {
+      ctx.bezierCurveTo(-10, -len/2, -10, -len/2, 0, -len);
+  }
+  //  ctx.lineTo(0, -len);
     ctx.stroke();
     
-    if(len < 10 ) {
-   ///   ctx.fillStyle = "yellow";
+    if(len < 5 ) {
+      ctx.fillStyle = "yellow";
       ctx.beginPath();
       ctx.arc(0, -len, 5, 0, Math.PI/2);
+      //ctx.arc(0, -len, 5, 0, Math.PI);
       ctx.fill();
       ctx.restore();
       return;
   } 
-  if(angle > 0) {
-    ctx.bezierCurveTo(5, -len/2, 5, -len/2, 0, -len);
-} else {
-    ctx.bezierCurveTo(-5, -len/2, -5, -len/2, 0, -len);
-}
+
   ctx.lineWidth = ctx.lineWidth*0.8;
   len = len*0.8
   draw(ctx, 0, -len, len, angle+10, ctx.lineWidth);
