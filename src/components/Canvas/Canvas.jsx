@@ -15,7 +15,6 @@ class Canvas extends React.Component {
 
       ctx.lineWidth = 10;
       draw(ctx, 350,600,120,0);
-      draw(ctx, 200,600,50,0);
     }
     render() {
       return(

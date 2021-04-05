@@ -1,33 +1,33 @@
 import './SearchPanel.css';
 import { TextField, Button, Radio, RadioGroup, FormControl, FormControlLabel, FormLabel  } from '@material-ui/core'
-import { fetchSearchPeople } from '../../reducers/actions/actions'
+import { fetchSearchObjects } from '../../reducers/actions/actions'
 import { connect } from 'react-redux'
 
 import React from 'react';
 
 
 class SearchPanel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      searchType: 'people'
+  constructor(props) { 
+    super(props); 
+     this.state = {
+      object: '',
+      searchType: 'art_design'
     };
 
   }
   handleReset=()=> {
-    this.setState({name: '', searchType: 'people' });
+    this.setState({object: '', searchType: 'art_design' });
   };
   handleRadioChange=(event)=> {
     this.setState({searchType: event.target.value});
   };
   handleChange=(event)=> {
-    this.setState({name: event.target.value});
+    this.setState({object: event.target.value});
   };
   handleSubmit=(event)=> {
     event.preventDefault();
-    const { name, searchType } = this.state;
-    this.props.fetchSearchPeople(name, searchType);
+    const { object, searchType } = this.state;
+    this.props.fetchSearchObjects(object, searchType);
   };
 
   render() {
@@ -37,12 +37,12 @@ class SearchPanel extends React.Component {
         <form  onSubmit={this.handleSubmit}>
           <TextField
             style={{ margin: 20}}
-            value={this.state.name}
+            value={this.state.object}
             onChange={this.handleChange}
-            label={"Имя/Название"}
+            label={"Object"}
           />
           <FormControl component="fieldset">
-            <FormLabel component="legend">Объект поиска</FormLabel>
+            <FormLabel component="legend">Category</FormLabel>
             <RadioGroup
               aria-label="type"
               name="type"
@@ -50,21 +50,21 @@ class SearchPanel extends React.Component {
               onChange={this.handleRadioChange}
             >
               <FormControlLabel
-                value="starships"
+                value="art_design"
                 control={<Radio color="primary" />}
-                label="Корабль"
+                label="Art/Design"
                 labelPlacement="start"
               />
               <FormControlLabel
-                value="people"
+                value="history_culture"
                 control={<Radio color="primary" />}
-                label="Персонаж"
+                label="History/Culture"
                 labelPlacement="start"
               />
               <FormControlLabel
-                value="planets"
+                value="science_technology"
                 control={<Radio color="primary" />}
-                label="Планета"
+                label="Science/Technology"
                 labelPlacement="start"
               />
             </RadioGroup>
@@ -72,18 +72,18 @@ class SearchPanel extends React.Component {
           <div >
             <Button
               style={{ margin: 20}}
-              label="Поиск"
+              label="Search"
               type="submit"
               variant="contained"
             >
-              Поиск
+              Search
             </Button>
             <Button
               variant="contained"
               onClick={this.handleReset}
-              label="Очистить"
+              label="Clean"
             >
-              Очистить
+              Clean
             </Button>
           </div>
         </form>
@@ -93,7 +93,7 @@ class SearchPanel extends React.Component {
   }
 }
 const mapDispatchToProps = (dispatch) => {
-  return {  fetchSearchPeople: (name, type) => dispatch(fetchSearchPeople(name, type))
+  return {  fetchSearchObjects: (category, type) => dispatch(fetchSearchObjects(category, type))
   }
 };
 

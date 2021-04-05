@@ -7,11 +7,17 @@ import { faBell } from '@fortawesome/free-solid-svg-icons'
 import { connect } from 'react-redux'
 import { addNotification, removeAllNotifications } from '../../reducers/actions/actions'
 import { Button } from '@material-ui/core';
+import {getNote} from '../utils/constants'
 
 
 
 const Vk = (props) => {
   const { addNotification, notifications, removeAllNotifications } = props;
+  const handleClick= () => {
+    removeAllNotifications()
+console.log(getNote(Math.floor(Math.random() * 10)));
+  
+  }
   return (
     <Fragment>
       <Header />
@@ -19,7 +25,7 @@ const Vk = (props) => {
 
         <div className="vk-bar">
           <div className="bell-area">
-            <div className="bell" onClick={removeAllNotifications}>
+            <div className="bell" onClick={handleClick}>
               {notifications && (notifications !== 0) ?
                 <Fragment><FontAwesomeIcon className="bell-active" icon={faBell} size="2x" /> <div className="notification-vk"> {notifications}</div> </Fragment> :
                 <FontAwesomeIcon className="bell-inactive" icon={faBell} size="2x" />}

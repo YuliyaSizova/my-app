@@ -1,4 +1,4 @@
-import { ADD, LOAD_PEOPLE, SEARCH_PEOPLE, LOGIN, ADD_NOTIFICATION, REMOVE_ALL_NOTIFICATIONS } from '../constants/actionTypes';
+import { ADD, LOAD_OBJECTS, SEARCH_OBJECTS, LOGIN, ADD_NOTIFICATION, REMOVE_ALL_NOTIFICATIONS } from '../constants/actionTypes';
 const initialState = {
   counts: 0,
   items: [],
@@ -8,11 +8,10 @@ const initialState = {
 function rootReducer(state = initialState, action) {
 
   if (action.type === ADD) {
-    console.log(state, state.counts);
     return { ...state, counts: state.counts + 1 };
-  } else if (action.type === LOAD_PEOPLE) {
+  } else if (action.type === LOAD_OBJECTS) {
     return { ...state, items: action.payload }
-  } else if (action.type === SEARCH_PEOPLE) {
+  } else if (action.type === SEARCH_OBJECTS) {
     return { ...state, items: action.payload }
   } else if (action.type === LOGIN) {
     return { login: true }

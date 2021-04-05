@@ -1,10 +1,10 @@
 import React from 'react';
 import './MainPageTree.scss';
 import { connect } from 'react-redux'
-import { fetchPeople } from '../../reducers/actions/actions'
+import { fetchArt } from '../../reducers/actions/actions'
 class MainPageTree extends React.Component {
  componentDidMount(){
-   this.props.fetchPeople();
+   this.props.fetchArt();
   }
 
   render() {
@@ -13,10 +13,10 @@ class MainPageTree extends React.Component {
       <div id="object-tree" className="tree">
         <div id="content">
         <h4>Список</h4>
-          <ul>
-          { items && items.length > 0 ? items.map(function(item) {
-            return <li>{item.name}</li>;
-          }) : 'Не найдено'}
+          <ul key={"ul"}>
+          { items && items.length > 0 ? items.map(item => {
+                   return <li key={item.id}>{item.title} - {item.content?.freetext?.objectType ? item.content?.freetext?.objectType.map(object =>{ return <span>{object?.content}</span>} ) : "Not found"}</li>;
+          }) : 'Not found'}
           </ul>
         </div>
       </div>
@@ -29,7 +29,7 @@ const mapStateToProps = (state) =>{
   }
 };
 const mapDispatchToProps = (dispatch) => {
- return {  fetchPeople: () => dispatch(fetchPeople())
+ return {  fetchArt: () => dispatch(fetchArt())
  }
 };
 

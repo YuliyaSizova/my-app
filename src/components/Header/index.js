@@ -10,7 +10,7 @@ class Header extends React.Component {
       <div id="header-wrapper">
         <div id="header" className="container">
           <div id="logo">
-            <h1>Star Wars</h1>
+            <h1>Smithsonian Institution</h1>
           </div>
           <div id="menu">
             <ul>
