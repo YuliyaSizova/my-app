@@ -12,7 +12,7 @@ class MainPageTree extends React.Component {
     return (
       <div id="object-tree" className="tree">
         <div id="content">
-        <h4>Список</h4>
+        <h4>List</h4>
           <ul key={"ul"}>
           { items && items.length > 0 ? items.map(item => {
                    return <li key={item.id}>{item.title} - {item.content?.freetext?.objectType ? item.content?.freetext?.objectType.map(object =>{ return <span>{object?.content}</span>} ) : "Not found"}</li>;
